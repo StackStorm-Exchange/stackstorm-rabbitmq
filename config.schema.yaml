@@ -1,0 +1,37 @@
+---
+  sensor_config:
+    description: "RabbitMQ Sensor settings"
+    type: "object"
+    required: true
+    additionalProperties: true
+    properties:
+      host:
+        description: "RabbitMQ host to connect to"
+        type: "string"
+        required: true
+      username:
+        description: "Optional username for RabbitMQ"
+        type: "string"
+      password:
+        description: "Optional password for RabbitMQ"
+        type: "string"
+        secret: true
+      rabbitmq_queue_sensor:
+        description: "Queue settings"
+        type: "object"
+        required: true
+        additionalProperties: true
+        properties:
+          queues:
+            description: "List of queues to monitor"
+            type: "array"
+            items:
+              type: "string"
+              required: true
+          deserialization_method:
+            description: "Method used to de-serialize body. Default is to leave body as-is"
+            type: "string"
+            enum:
+              - "json"
+              - "pickle"
+            required: false
