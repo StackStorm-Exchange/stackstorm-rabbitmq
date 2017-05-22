@@ -21,7 +21,7 @@
         type: "object"
         required: "true"
         additionalProperties: true
-        properties
+        properties:
           queues:
             description: "List of queues to monitor"
             type: "array"
