@@ -19,7 +19,7 @@
       rabbitmq_queue_sensor:
         description: "Queue settings"
         type: "object"
-        required: "true"
+        required: true
         additionalProperties: true
         properties:
           queues:
