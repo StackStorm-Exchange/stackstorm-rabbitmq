@@ -24,21 +24,11 @@ QUEUE_ATTRIBUTES = [
     # queue info
     ('messages', int),
     ('messages_ready', int),
+    ('messages_ready_ram', int),
     ('messages_unacknowledged', int),
     ('consumers', int),
     ('memory', int),
     ('state', str),
-
-    # backing store info
-    ('backing_queue_status.len', int),
-    ('backing_queue_status.pending_acks', int),
-    ('backing_queue_status.ram_msg_count', int),
-    ('backing_queue_status.ram_ack_count', int),
-    ('backing_queue_status.persistent_count', int),
-    ('backing_queue_status.avg_ingress_rate', float),
-    ('backing_queue_status.avg_egress_rate', float),
-    ('backing_queue_status.avg_ack_ingress_rate', float),
-    ('backing_queue_status.avg_ack_egress_rate', float)
 ]
 
 
@@ -78,4 +68,4 @@ def list_queues():
 
 if __name__ == '__main__':
     result = list_queues()
-    print(json.dumps(result))
+    print json.dumps(result)
