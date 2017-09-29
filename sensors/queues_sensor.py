@@ -72,7 +72,7 @@ class RabbitMQQueueSensor(Sensor):
             self.channel.queue_declare(queue=queue, durable=True)
 
             def callback(ch, method, properties, body, queue_copy=queue):
-                self._dispatch_trigger(ch, method, properties, body, queue=queue_copy)
+                self._dispatch_trigger(ch, method, properties, body, queue_copy)
 
             self.channel.basic_consume(callback, queue=queue)
 
