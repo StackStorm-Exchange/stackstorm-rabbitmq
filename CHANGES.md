@@ -1,5 +1,9 @@
 # Change Log
 
+# 0.4.0
+
+- Fixed trigger.queue incorrect
+
 # 0.3.0
 
 - Fixed broken `list_exchanges` and `list_queues` actions
