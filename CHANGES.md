@@ -1,5 +1,9 @@
 # Change Log
 
+# 0.4.2
+
+- Minor linting
+
 # 0.4.0
 
 - Fixed trigger.queue incorrect
