@@ -11,6 +11,7 @@ def to_bool(value):
 
     return value.lower() == 'true'
 
+
 # See https://github.com/michaelklishin/rabbit-hole/blob/master/queues.go#L10
 # for description
 QUEUE_ATTRIBUTES = [
