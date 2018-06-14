@@ -1,10 +1,10 @@
 import json
 import pickle
 
-import eventlet
 import pika
-
 from pika.credentials import PlainCredentials
+
+import eventlet
 
 from st2reactor.sensor.base import Sensor
 

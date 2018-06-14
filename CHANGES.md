@@ -1,5 +1,9 @@
 # Change Log
 
+# 0.5.0
+
+- Updated to pika 0.11.x, updated exchange\_type parameter, import re-ordering
+
 # 0.4.2
 
 - Minor linting
