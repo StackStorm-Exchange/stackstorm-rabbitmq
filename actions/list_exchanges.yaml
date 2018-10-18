@@ -1,6 +1,6 @@
 ---
   name: "list_exchanges"
-  runner_type: "run-remote-script"
+  runner_type: "remote-shell-script"
   description: "List RabbitMQ exchanges"
   enabled: true
   entry_point: "list_exchanges.py"
