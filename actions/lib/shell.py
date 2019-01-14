@@ -16,6 +16,8 @@
 import os
 import subprocess
 
+import six
+
 __all__ = [
     'run_command'
 ]
@@ -40,7 +42,7 @@ def run_command(cmd, cwd=None, env=None, shell=False):
 
     :rtype: ``tuple`` (exit_code, stdout, stderr)
     """
-    assert isinstance(cmd, (list, tuple) + (basestring, str))
+    assert isinstance(cmd, (list, tuple) + six.text_type)
 
     if not env:
         env = os.environ.copy()
