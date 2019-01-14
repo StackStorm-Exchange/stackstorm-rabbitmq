@@ -46,4 +46,4 @@ if __name__ == '__main__':
     vhost = sys.argv[1] if len(sys.argv) > 1 else None
     vhost = vhost if vhost else None
     result = list_exchanges(vhost=vhost)
-    print json.dumps(result)
+    print(json.dumps(result))

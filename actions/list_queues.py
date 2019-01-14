@@ -69,4 +69,4 @@ def list_queues():
 
 if __name__ == '__main__':
     result = list_queues()
-    print json.dumps(result)
+    print(json.dumps(result))
