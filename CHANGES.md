@@ -1,5 +1,12 @@
 # Change Log
 
+# 0.5.2
+
+- Fixed bug in `queues_sensor` where the channel wasn't calling `basic_consume` with the correct arguments
+- Fixed bug in `queues sensor` where the trigger type of `rabbitmq.new_message` had an incorrect type of `object` for the parameter `body` when instead it should have be a `string`.
+  
+  Contributed by Nick Maludy (@nmaludy Encore Technologies)
+
 # 0.5.0
 
 - Updated to pika 0.11.x, updated exchange\_type parameter, import re-ordering
