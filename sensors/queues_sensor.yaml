@@ -12,4 +12,4 @@
           queue:
             type: "string"
           body:
-            type: "object"
+            type: "string"
