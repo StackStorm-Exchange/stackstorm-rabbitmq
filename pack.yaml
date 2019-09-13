@@ -9,7 +9,7 @@ keywords:
   - aqmp
   - stomp
   - message broker
-version: 0.6.0
+version: 0.5.3
 python_versions:
   - "2"
   - "3"
