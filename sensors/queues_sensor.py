@@ -79,7 +79,7 @@ class RabbitMQQueueSensor(Sensor):
     def _dispatch_trigger(self, ch, method, properties, body, queue):
         body = self._deserialize_body(body=body)
         self._logger.debug('Received message for queue %s with body %s', queue, body)
-
+        body = body.decode('utf-8')
         payload = {"queue": queue, "body": body}
         try:
             self._sensor_service.dispatch(trigger="rabbitmq.new_message", payload=payload)
