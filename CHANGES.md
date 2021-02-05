@@ -1,5 +1,9 @@
 # Change Log
 
+# 1.0.0
+
+* Drop Python 2.7 support
+
 # 0.5.3
 
 - Fixed bug in `queues_sensor` where the parameter `body` was being returned as `byte` and not a `string`
