@@ -1,5 +1,9 @@
 # Change Log
 
+# 1.1.0
+- Added key to sensor config schema to identify a queue as type: quorum
+- Updated setup() to understand how to create/load queues with types: ["classic", "quorum"]
+
 # 1.0.0
 
 * Drop Python 2.7 support
