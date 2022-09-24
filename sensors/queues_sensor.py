@@ -44,7 +44,7 @@ class RabbitMQQueueSensor(Sensor):
         supported_methods = DESERIALIZATION_FUNCTIONS.keys()
         if (
             self.deserialization_method
-            and self.deserialization_method not in supported_methods
+            and self.deserialization_method not in supported_methods  # noqa: W503
         ):
             raise ValueError(
                 "Invalid deserialization method specified: %s"
