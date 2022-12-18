@@ -1,7 +1,7 @@
 # Change Log
 
 # 1.1.1
-- Updated to pika 1.3.x
+- Updated pip dependency to pika `1.3.x` to support python >= 3.7
 
 # 1.1.0
 - Added key to sensor config schema to identify a queue as type: quorum
