@@ -7,3 +7,42 @@ sensor_config:
     queues:
       - "queue1"
     deserialization_method: "json"
+sensor_binding_config:
+  host: "10.0.0.100"
+  username: "guest"
+  password: "guest"
+  exchanges:
+    - name: "my_direct_exchange"
+      queues:
+        - name: "images"
+          bindings:
+            - routing_key: "app.images"
+        - name: "movies"
+          bindings:
+            - routing_key: "app.movies"
+    - name: "my_fanout_exchange"
+      exchange_type: "fanout"
+      queues:
+        - name: "fanout_1"
+        - name: "fanout_2"
+        - name: "fanout_3"
+    - name: "my_topic_exchange"
+      exchange_type: "topic"
+      queues:
+        - name: "topic_a"
+          bindings:
+            - routing_key: "*"
+              arguments:
+                x-queue-type: "quorum"
+        - name: "topic_b"
+          bindings:
+            - routing_key: "a.b.c"
+    - name: "my_headers_exchange"
+      exchange_type: "headers"
+      queues:
+        - name: "headers_1"
+          bindings:
+            - arguments:
+                x-match: "any"
+                my_header: "val"
+                other_header: "other_val"

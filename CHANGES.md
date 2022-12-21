@@ -1,5 +1,8 @@
 # Change Log
 
+# 1.2.0
+- Added `RabbitMQBoundQueueSensor` to support advanced routing options for queues
+
 # 1.1.1
 - Updated pip dependency to pika `1.3.x` to support python >= 3.7
 

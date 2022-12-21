@@ -41,3 +41,77 @@ sensor_config:
             - "json"
             - "pickle"
           required: false
+sensor_binding_config:
+  description: "RabbitMQ Sensor with advanced routing settings"
+  type: "object"
+  required: false
+  additionalProperties: false
+  properties:
+    host:
+      description: "RabbitMQ host to connect to"
+      type: "string"
+      required: true
+    username:
+      description: "Optional username for RabbitMQ"
+      type: "string"
+    password:
+      description: "Optional password for RabbitMQ"
+      type: "string"
+      secret: true
+    deserialization_method:
+      description: "Method used to de-serialize body. Default is to leave body as-is"
+      type: "string"
+      enum:
+        - "json"
+        - "pickle"
+      required: false
+    exchanges:
+      description: "A list of exchanges, with queues and routing rules"
+      type: "array"
+      required: true
+      items:
+        type: "object"
+        additionalProperties: false
+        properties:
+          name:
+            description: "Exchange name"
+            type: "string"
+            required: true
+          exchange_type:
+            description: "Exchange type"
+            type: "string"
+            enum:
+              - "direct"
+              - "fanout"
+              - "topic"
+              - "headers"
+            required: false
+          queues:
+            description: "A list of queues to monitor for this exchange"
+            type: "array"
+            required: true
+            items:
+              type: "object"
+              additionalProperties: false
+              properties:
+                name:
+                  description: "Queue name"
+                  type: "string"
+                  required: true
+                bindings:
+                  description: "A list of bindings for queue to have to this exchange"
+                  type: "array"
+                  required: false
+                  items:
+                    type: "object"
+                    additionalProperties: false
+                    properties:
+                      routing_key:
+                        description: "Optional Routing key to bind queue to exchange with"
+                        type: "string"
+                        required: false
+                      arguments:
+                        description: "Optional arguments to provide when binding queue to exhange"
+                        type: "object"
+                        required: false
+                        additionalProperties: true
