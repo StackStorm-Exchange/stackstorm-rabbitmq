@@ -2,7 +2,7 @@
 sensor_config:
   description: "RabbitMQ Sensor settings"
   type: "object"
-  required: true
+  required: false
   additionalProperties: true
   properties:
     host:
@@ -41,3 +41,117 @@ sensor_config:
             - "json"
             - "pickle"
           required: false
+amqp_watcher_sensor_config:
+  description: "The config for a py-amqp sensor that creates and monitors queues in RabbitMQ for messages"
+  required: false
+  additionalProperties: false
+  type: "object"
+  properties:
+    host:
+      description: "The RabbitMQ host to connect to"
+      type: "string"
+      required: true
+    port:
+      description: "Connection port for RabbitMQ (Default: 5672)"
+      type: "number"
+    username:
+      description: "Username for authenticating to RabbitMQ"
+      type: "string"
+      required: true
+    password:
+      description: "Password for authenticating to RabbitMQ"
+      type: "string"
+      required: true
+      secret: true
+    queues:
+      description: "A list of queues to be declared (created if missing)"
+      type: "array"
+      required: false
+      additionalProperties: false
+      items:
+        type: "object"
+        additionalProperties: false
+        required: true
+        properties:
+          queue:
+            description: "The name of the queue"
+            type: "string"
+            required: true
+          type:
+            description: "The type of the queue"
+            type: "string"
+            required: false
+            enum:
+              - "classic"
+              - "quorum"
+              - "stream"
+          passive:
+            description: "Configure this queue as passive?"
+            type: "boolean"
+            required: false
+          durable:
+            description: "Configure this queue as durable?"
+            type: "boolean"
+            required: false
+          exclusive:
+            description: "Configure this queue as exclusive?"
+            type: "boolean"
+            required: false
+          auto_delete:
+            description: "Configure this queue to auto delete?"
+            type: "boolean"
+            required: false
+          arguments:
+            description: "Additional arguments to be pased during Queue declare"
+            type: "object"
+            required: false
+            additionalProperties: true
+    exchanges:
+      description: "A list of exchanges to be declared (created if missing)"
+      type: "array"
+      required: false
+      additionalProperties: false
+      items:
+        type: "object"
+        additionalProperties: false
+        required: true
+        properties:
+          exchange:
+            description: "The name of the exchange"
+            type: "string"
+            required: true
+          type:
+            description: "The type of the exchange"
+            type: "string"
+            required: false
+            enum:
+              - "direct"
+              - "fanout"
+              - "headers"
+              - "topic"
+          passive:
+            description: "Configure this exchange as passive?"
+            type: "boolean"
+            required: false
+          durable:
+            description: "Configure this exchange as durable?"
+            type: "boolean"
+            required: false
+          auto_delete:
+            description: "Configure this exchange to auto delete?"
+            type: "boolean"
+            required: false
+          arguments:
+            description: "Additional arguments to be pased during Exchange declare"
+            type: "object"
+            required: false
+            additionalProperties: true
+          bindings:
+            description: "A list of bindings to be declared for this exchange"
+            type: "array"
+            required: false
+            additionalProperties: false
+            items:
+              type: "object"
+              required: true
+              additionalProperties: true

@@ -1,4 +1,7 @@
 # Change Log
+# 1.1.2
+- Added new py-amqp based sensor using asyncio (3.8) for concurrency. Details on why: https://github.com/StackStorm/st2/discussions/5743
+- Added pip dependency for `amqp==5.0.6` (py-amqp)
 
 # 1.1.1
 - Updated pip dependency to pika `1.3.x` to support python >= 3.7
