@@ -7,3 +7,17 @@ sensor_config:
     queues:
       - "queue1"
     deserialization_method: "json"
+amqp_watcher_sensor_config:
+  host: "rabbitmq.domain.com"
+  port: 5672
+  username: "guest"
+  password: "guest"
+  queues:
+    - queue: "temp_queue"
+      type: "classic"
+  exchanges:
+    - exchange: "temp_exchange"
+      type: "direct"
+      bindings:
+        - routing_key: "temp.messages"
+          queue: "temp_queue"

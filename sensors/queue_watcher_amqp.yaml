@@ -1,0 +1,16 @@
+---
+class_name: "QueueWatcherAMQP"
+entry_point: "queue_watcher_amqp.py"
+description: "A py-amqp sensor that creates and monitors queues in RabbitMQ for messages"
+trigger_types:
+  - name: "amqp_msg_rx"
+    description: "Trigger that fires when a new amqp message is received"
+    payload_schema:
+      type: "object"
+      properties:
+          queue:
+            type: "string"
+          body:
+            anyOf:
+              - type: "string"
+              - type: "object"
