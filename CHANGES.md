@@ -1,5 +1,5 @@
 # Change Log
-# 1.1.2
+# 1.2.0
 - Added new py-amqp based sensor using asyncio (3.8) for concurrency. Details on why: https://github.com/StackStorm/st2/discussions/5743
 - Added pip dependency for `amqp==5.0.6` (py-amqp)
 
