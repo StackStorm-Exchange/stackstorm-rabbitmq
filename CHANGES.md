@@ -1,5 +1,8 @@
 # Change Log
 
+# 1.1.2
+- Added virtual_host connection parameter to `queues_sensor`
+
 # 1.1.1
 - Updated pip dependency to pika `1.3.x` to support python >= 3.7
 
