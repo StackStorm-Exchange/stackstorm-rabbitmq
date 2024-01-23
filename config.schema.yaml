@@ -17,8 +17,10 @@ sensor_config:
       type: "string"
       secret: true
     virtual_host:
-      description: "Optional virtual host for RabbitMQ"
       type: "string"
+      description: "RabbitMQ virtual host to use"
+      required: true
+      default: "/"
     rabbitmq_queue_sensor:
       description: "Queue settings"
       type: "object"

@@ -11,7 +11,7 @@ and edit as required.
 * ``host`` - RabbitMQ host to connect to.
 * ``username`` - Username to connect to RabbitMQ (optional).
 * ``password`` - Password to connect to RabbitMQ (optional).
-* ``virtual_host`` - RabbiqMQ virtual host to use (optional).
+* ``virtual_host`` - RabbitMQ virtual host to use.
 * ``queues`` - List of queues to check for messages. See an example below.
 * ``quorum_queues`` - List of queues defined in `queues` that should be handled as `type: quorum`
 * ``deserialization_method`` - Which method to use to de-serialize the
