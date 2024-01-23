@@ -77,7 +77,10 @@ class RabbitMQQueueSensor(Sensor):
                 host=self.host, credentials=credentials, virtual_host=self.virtual_host
             )
         else:
-            connection_params = pika.ConnectionParameters(host=self.host, virtual_host=self.virtual_host)
+            connection_params = pika.ConnectionParameters(
+                host=self.host,
+                virtual_host=self.virtual_host
+            )
 
         self.conn = pika.BlockingConnection(connection_params)
         self.channel = self.conn.channel()
